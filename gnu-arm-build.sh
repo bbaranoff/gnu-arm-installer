@@ -1,6 +1,4 @@
 #!/bin/sh
-
-
 sudo apt-get install build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5 \ libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev
 ROOT=`pwd`
 SRCDIR=$ROOT/src
