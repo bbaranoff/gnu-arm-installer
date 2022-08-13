@@ -7,6 +7,10 @@ SRCDIR=$ROOT/src
 BUILDDIR=$ROOT/build
 PREFIX=$ROOT/install
 mkdir $SRCDIR $BUILDDIR $PREFIX
+cd $SRCDIR
+wget http://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.bz2
+wget http://ftp.gnu.org/gnu/binutils/binutils-2.21.1a.tar.bz2
+wget ftp://sources.redhat.com/pub/newlib/newlib-1.19.0.tar.gz
 
 GCC_SRC=gcc-4.8.2.tar.bz2
 GCC_VERSION=4.8.2
