@@ -1,90 +1,5 @@
 # gnu-arm-installer
 
-⚲
-Search
-PROJECT
-Overview
-Activity
-Roadmap
-Issues
-News
-Wiki
-Repository
-GENERAL
-Home
-Projects
-News
-Issues
-Activity
-Help
-Planet
-Git repositories
-Mailing lists
-Impressum
-Sidebar
-User Manual
-Child Pages
-Community
-Contact
-IRC
-People
-GAPK Integration
-Glossary
-GSMTAP
-Hardware
-Filter Replacement
-GsmDevelBoard
-Hardware Setup
-Mediatek Chipset
-Phones
-RingtoneChips
-Serial Cable
-TI Calypso Chipset
-LegalAspects
-OsmocomBB
-OsmocomBB Firmware
-CompalRamloader
-Compal dsp dumpbin
-Emi-firmware
-FirmwareApiReference
-Firmware Memory Layout
-L1testbin
-Layer1bin
-Loaderbin
-MTKRomloader
-Rssibin
-Toolchain
-PreliminaryRequirements
-Presentations
-PressCoverage
-ProjectRationale
-RelatedProjects
-Dct3-gsmtap
-Software
-Branches
-GettingStarted osx
-Host Software
-L1A L23 Interface
-Sniffing
-SoftSIM
-Software AreasOfWork
-Software Getting Started
-WiresharkIntegration
-TRX Interface
-FakeTRX
-SDR PHY
-TSM30Layer1
-Tutorials
-CalypsoBTS
-Flashing
-HardwareCP210xTutorial
-WIKI
-Start page
-Index by title
-Index by date
-PROFILE
-Sign in
-Register
 WikiStart » OsmocomBB Firmware » Toolchain »
 
 GNU ARM toolchain
@@ -98,6 +13,8 @@ Getting the buildscript
 First of all, create a directory you want to use for building the toolchain, and download the buildscript [raw-gnu-arm-build.3.sh] there.
 You will need to make it executable:
 
+```bash
+
 $ chmod +x gnu-arm-build.3.sh
 Dependencies
 In order to build the toolchain, you will need to install the following packages (assuming you're using a Debian-based distribution):
@@ -106,21 +23,34 @@ $ sudo apt-get install build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-d
   libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev
 Note: you maybe have to adjust some libncurses and libmpfr version numbers in the above for newer distributions (as of 2021). Use apt-cache search to figure it out.
 
+```
+
 Preparation
 Open a shell in the directory of gnu-arm-build.sh and create the following directories:
 
+```bash
+
 $ mkdir build install src
+
+```
 Download the needed sources to src/:
 
+```bash
 $ cd src/
 $ wget http://ftp.gnu.org/gnu/gcc/gcc-4.8.2/gcc-4.8.2.tar.bz2
 $ wget http://ftp.gnu.org/gnu/binutils/binutils-2.21.1a.tar.bz2
 $ wget ftp://sources.redhat.com/pub/newlib/newlib-1.19.0.tar.gz
+```
+
+
 On Ubuntu 18.04 and Debian 10, tweak the build script such that it applies gcc-4.8.2-ubuntu-18-04.diff after unpacking gcc sources.
 
 Building the toolchain
+```bash
 $ cd ..
 $ ./gnu-arm-build.3.sh 
+```
+
 I will build an arm-none-eabi cross-compiler:
 
   Prefix: <YOURPATH>/install
@@ -138,6 +68,10 @@ If you're using bash, you can add the following in your ~/.bashrc file:
 export PATH=$PATH:<YOURPATH>/install/bin
 That's it. You can build OsmocomBB now (see Software Getting Started).
 
+
+```bash
+export PATH=$PATH:<YOURPATH>/install/bin
+```
 Credits:
 
 This script is a slightly updated/modified version of the script found here.
