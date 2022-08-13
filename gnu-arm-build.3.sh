@@ -1,9 +1,12 @@
 #!/bin/sh
 
+
+sudo apt-get install build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5 \ libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev
 ROOT=`pwd`
 SRCDIR=$ROOT/src
 BUILDDIR=$ROOT/build
 PREFIX=$ROOT/install
+mkdir $SRCDIR $BUILDDIR $PREFIX
 
 GCC_SRC=gcc-4.8.2.tar.bz2
 GCC_VERSION=4.8.2
