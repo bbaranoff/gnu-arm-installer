@@ -10,15 +10,17 @@ GCC 4.8.2
 Binutils 2.21.1
 Newlib 1.19
 Getting the buildscript
-First of all, create a directory you want to use for building the toolchain, and download the buildscript [raw-gnu-arm-build.3.sh] there.
+First of all, create a directory you want to use for building the toolchain, and download the buildscript https://osmocom.org/attachments/2052 there.
 You will need to make it executable:
 
 ```bash
 
 $ chmod +x gnu-arm-build.3.sh
+```
 Dependencies
-In order to build the toolchain, you will need to install the following packages (assuming you're using a Debian-based distribution):
 
+In order to build the toolchain, you will need to install the following packages (assuming you're using a Debian-based distribution):
+```bash
 $ sudo apt-get install build-essential libgmp3-dev libmpfr-dev libx11-6 libx11-dev texinfo flex bison libncurses5 \
   libncurses5-dbg libncurses5-dev libncursesw5 libncursesw5-dbg libncursesw5-dev zlibc zlib1g-dev libmpfr4 libmpc-dev
 Note: you maybe have to adjust some libncurses and libmpfr version numbers in the above for newer distributions (as of 2021). Use apt-cache search to figure it out.
